@@ -24,10 +24,16 @@ exports.max = function max(array) {
 
 exports.avg = function avg(array) {
     let sum = 0;
+    let result
     if (array) {
         for (let i = 0; i <= array.length - 1; i++) {
             sum += array[i];
         }
-        return sum / array.length;
-    } else return 0;
+        result = sum / array.length;
+        if(isNaN(result)){
+            return 0
+        } else return result
+    } else {
+        return 0;
+    }
 };
